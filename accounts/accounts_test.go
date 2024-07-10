@@ -24,9 +24,12 @@ import (
 )
 
 func TestTextHash(t *testing.T) {
+	// Parallel test signal, 다른 테스트와 병렬적으로 실행
 	t.Parallel()
+	// 주어진 메시지에 해시값을 계산하는 helper function
 	hash := TextHash([]byte("Hello Joe"))
 	want := hexutil.MustDecode("0xa080337ae51c4e064c189e113edd0ba391df9206e2f49db658bb32cf2911730b")
+	// hash==want인지 테스트
 	if !bytes.Equal(hash, want) {
 		t.Fatalf("wrong hash: %x", hash)
 	}
