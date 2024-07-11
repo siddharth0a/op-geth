@@ -29,6 +29,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// admin_startRPC, admin_startWS APIs를 사용해 HTTP 서버가 제대로 시작되었는지 테스트
+
 // This test uses the admin_startRPC and admin_startWS APIs,
 // checking whether the HTTP server is started correctly.
 func TestStartRPC(t *testing.T) {

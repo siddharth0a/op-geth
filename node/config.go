@@ -41,6 +41,7 @@ const (
 	datadirNodeDatabase    = "nodes"              // Path within the datadir to store the node infos
 )
 
+// Config는 P2P network layer의 프로토콜의 configuration
 // Config represents a small collection of configuration values to fine tune the
 // P2P network layer of a protocol stack. These values can be further extended by
 // all registered services.

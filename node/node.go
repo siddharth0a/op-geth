@@ -40,6 +40,7 @@ import (
 	"github.com/gofrs/flock"
 )
 
+// Node는 서비스가 등록될 수 있는 container
 // Node is a container on which services can be registered.
 type Node struct {
 	eventmux      *event.TypeMux
