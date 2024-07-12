@@ -22,6 +22,8 @@ import (
 	"testing"
 )
 
+// HD: Hierarchical Deterministic
+// HD 구조를 사용해 부모키와 인덱스를 사용해 자식 키를 파생시킬 수 있음
 // Tests that HD derivation paths can be correctly parsed into our internal binary
 // representation.
 func TestHDPathParsing(t *testing.T) {
@@ -72,6 +74,7 @@ func TestHDPathParsing(t *testing.T) {
 		{"m/-1'", nil},         // Cannot contain negative number
 	}
 	for i, tt := range tests {
+		// ParseDerivationPath로 만든 path와 테스트 객체의 output동일한지 test
 		if path, err := ParseDerivationPath(tt.input); !reflect.DeepEqual(path, tt.output) {
 			t.Errorf("test %d: parse mismatch: have %v (%v), want %v", i, path, err, tt.output)
 		} else if path == nil && err == nil {
