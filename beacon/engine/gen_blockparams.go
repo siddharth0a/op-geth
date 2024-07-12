@@ -13,6 +13,7 @@ import (
 
 var _ = (*payloadAttributesMarshaling)(nil)
 
+// PayloadAttributes를 Json으로 marshals
 // MarshalJSON marshals as JSON.
 func (p PayloadAttributes) MarshalJSON() ([]byte, error) {
 	type PayloadAttributes struct {
@@ -41,7 +42,7 @@ func (p PayloadAttributes) MarshalJSON() ([]byte, error) {
 	enc.GasLimit = (*hexutil.Uint64)(p.GasLimit)
 	return json.Marshal(&enc)
 }
-
+// PayloadAttributes를 json에서 unmarshals
 // UnmarshalJSON unmarshals from JSON.
 func (p *PayloadAttributes) UnmarshalJSON(input []byte) error {
 	type PayloadAttributes struct {
